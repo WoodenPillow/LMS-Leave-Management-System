@@ -1,0 +1,40 @@
+INCLUDE standard input/output library
+INCLUDE string handling library
+INCLUDE boolean library
+INCLUDE string library for additional string handling functions
+
+DEFINE MAX_EMPLOYEES = 50
+DEFINE MAX_LEAVES = 10
+DEFINE MAX_DEPARTMENTS = 4
+DEFINE MAX_LENGTH = 100
+
+DEFINE Employee structure
+    name: array of characters with MAX_LENGTH elements
+    id: integer
+    department: integer
+    leaves_remaining: integer
+END DEFINE
+
+DEFINE LeaveStatus enumeration
+    PENDING
+    APPROVED
+    REJECTED
+END DEFINE
+
+DEFINE Leave structure
+    id: integer
+    employee_id: integer
+    start_date: array of characters with MAX_LENGTH elements
+    end_date: array of characters with MAX_LENGTH elements
+    reason: array of characters with MAX_LENGTH elements
+    status: LeaveStatus enumeration
+END DEFINE
+
+DECLARE employees: array of Employee with MAX_EMPLOYEES elements
+DECLARE employee_count: integer set to 0
+
+DECLARE leaves: array of Leave with MAX_LEAVES elements
+DECLARE leave_count: integer set to 0
+
+DECLARE department_leaves: array of integers with MAX_DEPARTMENTS elements
+

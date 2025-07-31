@@ -1,0 +1,53 @@
+function apply_for_leave():
+    if employee_count equals 0:
+        print "No employees found"
+        return
+    end if
+    if leave_count equals MAX_LEAVES:
+        print "Error: Maximum number of leave requests reached"
+        return
+    end if
+
+    let employee_id be an integer
+    print "Enter your employee ID: "
+    input employee_id
+
+    let found be a boolean and set it to false
+    let employee_index be an integer and set it to 0
+    for i from 0 to employee_count-1:
+        if employees[i].id equals employee_id:
+            set found to true
+            set employee_index to i
+            exit for loop
+        end if
+    end for
+    if not found:
+        print "Error: Employee not found"
+        return
+    end if
+
+    // Check if the employee has any leaves remaining
+    if employees[employee_index].leaves_remaining equals 0:
+        print "Error: No leaves remaining for the employee"
+        return
+    end if
+
+    let leave be a Leave structure
+    leave.id = leave_count + 1
+    leave.employee_id = employee_id
+
+    print "Enter the start date of the leave (DD-MM-YYYY): "
+    input leave.start_date
+    print "Enter the end date of the leave (DD-MM-YYYY): "
+    input leave.end_date
+    print "Enter the reason for the leave (maternity, sick leave, etc.): "
+    input leave.reason
+    leave.status = PENDING
+
+    leaves[leave_count] = leave
+    increment leave_count
+
+    decrement employees[employee_index].leaves_remaining
+
+    print "Leave request sent successfully"
+end function

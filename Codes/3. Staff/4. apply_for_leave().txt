@@ -1,0 +1,54 @@
+void apply_for_leave() {
+    if (employee_count == 0) {
+        printf(nNo employees foundn);
+        return;
+    }
+    if (leave_count == MAX_LEAVES) {
+        printf(Error Maximum number of leave requests reachedn);
+        return;
+    }
+
+    int employee_id;
+    printf(Enter your employee ID );
+    scanf(%d, &employee_id);
+
+    bool found = false;
+    int employee_index = 0;
+    for (int i = 0; i  employee_count; i++) {
+        if (employees[i].id == employee_id) {
+            found = true;
+            employee_index = i;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf(Error Employee not foundn);
+        return;
+    }
+
+     Check if the employee has any leaves remaining
+    if (employees[employee_index].leaves_remaining = 0) {
+        printf(Error No leaves remaining for the employeen);
+        return;
+    }
+
+    struct Leave leave;
+    leave.id = leave_count + 1;
+    leave.employee_id = employee_id;
+
+    printf(Enter the start date of the leave (DD-MM-YYYY) );
+    scanf(%s, leave.start_date);view_leaves
+    printf(Enter the end date of the leave (DD-MM-YYYY) );
+    scanf(%s, leave.end_date);
+    printf(Enter the reason for the leave (maternity, sickleave, etc) );
+    scanf(%s, leave.reason);
+    leave.status = PENDING;
+
+    leaves[leave_count] = leave;
+    leave_count++;
+
+    employees[employee_index].leaves_remaining--;
+
+    printf(Leave request sent successfullyn);
+}

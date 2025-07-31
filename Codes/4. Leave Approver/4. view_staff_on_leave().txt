@@ -1,0 +1,22 @@
+void view_staff_on_leave() {
+    if (leave_count == 0) {
+        printf(nNo leaves foundn);
+        return;
+    }
+    char date[100];
+    printf(Enter the date (DD-MM-YYYY) );
+    scanf(%s, date);
+
+    printf(IDtNamen);
+    for (int i = 0; i  leave_count; i++) {
+        if (leaves[i].status == APPROVED && (strcmp(leaves[i].start_date, date) = 0) && (strcmp(leaves[i].end_date, date) = 0)) {
+            int employee_id = leaves[i].employee_id;
+            for (int j = 0; j  employee_count; j++) {
+                if (employees[j].id == employee_id) {
+                    printf(%dt%sn, employees[j].id, employees[j].name);
+                    break;
+                }
+            }
+        }
+    }
+}

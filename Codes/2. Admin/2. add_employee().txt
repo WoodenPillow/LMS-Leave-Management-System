@@ -1,0 +1,18 @@
+void add_employee() {
+    if (employee_count == MAX_EMPLOYEES) {
+        printf("Error: Maximum number of employees reached\n");
+        return;
+    }
+
+    printf("Enter employee name: ");
+    scanf("%s", employees[employee_count].name);
+    printf("Enter employee ID: ");
+    scanf("%d", &employees[employee_count].id);
+    printf("Enter the employee's department (1 to %d): ", MAX_DEPARTMENTS);
+    scanf("%d", &employees[employee_count].department);
+    printf("Enter the number of leaves for %s: ", employees[employee_count].name);
+    scanf("%d", &employees[employee_count].leaves_remaining);
+
+    employee_count++;
+    printf("Employee added successfully\n");
+}

@@ -1,0 +1,10 @@
+FUNCTION view_employees():
+    IF employee_count == 0 THEN
+        PRINT "No employees found"
+        RETURN
+    END IF
+    PRINT "ID\tName\tDepartment\tLeaves Remaining"
+    FOR i = 0 TO employee_count - 1 DO
+        PRINT employees[i].id, employees[i].name, employees[i].department, employees[i].leaves_remaining
+    END FOR
+END FUNCTION

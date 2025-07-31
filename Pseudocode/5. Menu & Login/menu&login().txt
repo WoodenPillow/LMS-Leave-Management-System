@@ -1,0 +1,119 @@
+Declare variables choice, option, flag, username and password as appropriate data types
+
+while true:
+    Print welcome message and menu options
+    Prompt user to enter their choice
+    Read in user's choice to option variable
+    Set flag to 1
+
+    switch option:
+        case 1:
+            Prompt user to enter username and password for admin login
+            Read in username and password to username and password variables
+            if username and password are not equal to "admin":
+                Print "Invalid username or password!"
+            else:
+                Print "Login Successful!"
+            
+            while flag:
+                Display admin menu options
+                Read in user's choice to choice variable
+
+                switch choice:
+                    case 1:
+                        Call add_employee() function
+                        break
+                    case 2:
+                        Call view_employees() function
+                        break
+                    case 3:
+                        Call view_leave_summary() function
+                        break
+                    case 4:
+                        Call write_employees() function
+                        break
+                    case 5:
+                        Call read_employees() function
+                        break
+                    case 6:
+                        Set flag to 0
+                        break
+                    default:
+                        Print "Error: Invalid choice!"
+                        break
+                
+            break
+
+        case 2:
+            Prompt user to enter username and password for staff login
+            Read in username and password to username and password variables
+            if username and password are not equal to "staff":
+                Print "Invalid username or password!"
+            else:
+                Print "Login Successful!"
+
+            while flag:
+                Display staff menu options
+                Read in user's choice to choice variable
+
+                switch choice:
+                    case 1:
+                        Call view_pending_leaves() function
+                        break
+                    case 2:
+                        Call view_leaves() function
+                        break
+                    case 3:
+                        Call apply_for_leave() function
+                        break
+                    case 4:
+                        Call cancel_leave_request() function
+                        break
+                    case 5:
+                        Set flag to 0
+                        break
+                    default:
+                        Print "Error: Invalid choice!"
+                        break
+
+            break
+
+        case 3:
+            Prompt user to enter username and password for leave approver login
+            Read in username and password to username and password variables
+            if username and password are not equal to "leaveapp":
+                Print "Invalid username or password!"
+            else:
+                Print "Login Successful!"
+
+            while flag:
+                Display leave approver menu options
+                Read in user's choice to choice variable
+
+                switch choice:
+                    case 1:
+                        Call view_leaves() function
+                        break
+                    case 2:
+                        Call approve_leave() function
+                        break
+                    case 3:
+                        Call view_staff_on_leave() function
+                        break
+                    case 4:
+                        Call write_leaves_summary() function
+                        break
+                    case 5:
+                        Set flag to 0
+                        break
+                    default:
+                        Print "Error: Invalid choice!"
+                        break
+
+            break
+
+        case 4:
+            Exit the program
+        default:
+            Print "Error: Invalid role!"
+            break

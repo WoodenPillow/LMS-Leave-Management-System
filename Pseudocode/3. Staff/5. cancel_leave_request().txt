@@ -1,0 +1,24 @@
+function cancel_leave_request()
+    read leave_id from user input
+    found = false
+    leave_index = 0
+    for i = 0 to leave_count-1
+        if leaves[i].id equals leave_id
+            found = true
+            leave_index = i
+            break
+        end if
+    end for
+    
+    if not found
+        print "Error: Leave request not found"
+        return
+    end if
+    
+    for i = leave_index to leave_count-2
+        leaves[i] = leaves[i+1]
+    end for
+    
+    leave_count = leave_count - 1
+    print "Leave request with ID", leave_id, "has been cancelled"
+end function

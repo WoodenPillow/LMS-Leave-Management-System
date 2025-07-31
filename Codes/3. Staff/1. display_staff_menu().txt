@@ -1,0 +1,9 @@
+void display_staff_menu() {
+    printf("Staff Menu\n");
+    printf("1. View Pending Leaves\n");
+    printf("2. View Leaves\n");
+    printf("3. Apply for Leave\n");
+    printf("4. Cancel leave request\n");
+    printf("5. Exit\n");
+    printf("Enter your choice: ");
+}

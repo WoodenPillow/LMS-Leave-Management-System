@@ -1,0 +1,32 @@
+void approve_leave() {
+    int leave_id;
+    printf("Enter the ID of the leave request to approve: ");
+    scanf("%d", &leave_id);
+
+    
+    bool found = false;
+    int leave_index = 0;
+    for (int i = 0; i < leave_count; i++) {
+        if (leaves[i].id == leave_id) {
+            found = true;
+            leave_index = i;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Error: Leave request not found\n");
+        return;
+    }
+
+    
+    if (leaves[leave_index].status != PENDING) {
+        printf("Error: Leave request already processed\n");
+        return;
+    }
+
+    
+    leaves[leave_index].status = APPROVED;
+    department_leaves[employees[leave_index].department]++;
+    printf("Leave request approved successfully\n");
+}

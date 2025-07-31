@@ -1,0 +1,9 @@
+void display_leave_approver_menu() {
+    printf("Leave Approver Menu\n");
+    printf("1. View Pending Leaves\n");
+    printf("2. Approve Leave\n");
+    printf("3. View Staff On Leave on a Specific Date\n");
+    printf("4. Write leaves summary to text file\n");
+    printf("5. Exit\n");
+    printf("Enter your choice: ");
+}

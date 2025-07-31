@@ -1,0 +1,10 @@
+function display_admin_menu():
+    print "Admin Menu"
+    print "1. Add Staff"
+    print "2. View Staff"
+    print "3. View Leave Summary"
+    print "4. Write Staff to a Text File"
+    print "5. Read Staff from a Text File"
+    print "6. Exit"
+    print "Enter your choice: "
+end function

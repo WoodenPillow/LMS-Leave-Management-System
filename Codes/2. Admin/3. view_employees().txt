@@ -1,0 +1,10 @@
+void view_employees() {
+    if (employee_count == 0) {
+        printf("\nNo employees found\n");
+        return;
+    }
+    printf("ID\tName\tDepartment\tLeaves Remaining\n");
+    for (int i = 0; i < employee_count; i++) {
+        printf("%d\t%s\t%d\t\t%d\n", employees[i].id, employees[i].name, employees[i].department, employees[i].leaves_remaining);
+    }
+}

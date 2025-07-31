@@ -1,0 +1,10 @@
+FUNCTION write_leaves_summary():
+    FILE fp = fopen("leaves_summary.txt", "w")
+    fprintf(fp, "DepartmenttLeaves\n")
+    for i from 0 to MAX_DEPARTMENTS:
+        fprintf(fp, "%dtt%d\n", i, department_leaves[i])
+    ENDFOR
+    print "Leaves written to file successfully\n"
+    fclose(fp)
+END FUNCTION
+

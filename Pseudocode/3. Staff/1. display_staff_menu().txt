@@ -1,0 +1,11 @@
+Function display_staff_menu():
+    PRINT "Staff Menu"
+    PRINT "1. View Pending Leaves"
+    PRINT "2. View Leaves"
+    PRINT "3. Apply for Leave"
+    PRINT "4. Cancel leave request"
+    PRINT "5. Exit"
+    PRINT "Enter your choice: "
+
+END FUNCTION
+

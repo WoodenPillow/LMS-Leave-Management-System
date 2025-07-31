@@ -1,0 +1,17 @@
+FUNCTION view_staff_on_leave():
+    if leave_count = 0:
+        print "No leaves found"
+        return
+    print "IDtName"
+    input date
+    for i from 0 to leave_count:
+        if leaves[i].status = APPROVED AND leaves[i].start_date = date AND leaves[i].end_date = date:
+            employee_id = leaves[i].employee_id
+            for j from 0 to employee_count:
+                if employees[j].id = employee_id:
+                    print employees[j].id, employees[j].name
+                    break
+            ENDIF
+        END FOR
+END FUNCTION
+

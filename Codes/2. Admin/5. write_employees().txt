@@ -1,0 +1,14 @@
+void write_employees() {
+    if (employee_count == 0) {
+        printf("\nNo employees found\n\n");
+        return;
+    }
+    FILE* fp = fopen("employees.txt", "w");
+    fprintf(fp, "ID\tName\tDepartment\tLeaves Remaining\n");
+    for (int i = 0; i < employee_count; i++) {
+        fprintf(fp, "%d\t%s\t%d\t\t%d\n", employees[i].id, employees[i].name, employees[i].department, employees[i].leaves_remaining);
+    }
+    
+    printf("\nEmployees written to file successfully\n\n");
+    fclose(fp);
+}

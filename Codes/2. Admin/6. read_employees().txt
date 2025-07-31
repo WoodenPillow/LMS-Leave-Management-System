@@ -1,0 +1,21 @@
+void read_employees() {
+    if (employee_count == MAX_EMPLOYEES) {
+        printf("Error: Maximum number of employees reached\n");
+        return;
+    }
+    
+    FILE* fp = fopen("employees.txt", "r");
+    if (fp == NULL) {
+        printf("\nNo employees found\n");
+        return;
+    }
+    char buffer[1024];
+    fgets(buffer, 1024, fp);
+    while (fscanf(fp, "%d%s%d%d", &employees[employee_count].id, employees[employee_count].name
+                  , &employees[employee_count].department, &employees[employee_count].leaves_remaining)==4)
+    {
+        employee_count++;
+    }
+    printf("\nEmployees read from file successfully\n\n");
+    fclose(fp);
+}

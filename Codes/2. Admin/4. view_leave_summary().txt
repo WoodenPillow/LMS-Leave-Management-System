@@ -1,0 +1,6 @@
+void view_leave_summary() {
+    printf(DepartmenttLeavesn);
+    for (int i = 0; i  MAX_DEPARTMENTS; i++) {
+        printf(%dttt%dn, i + 1, department_leaves[i]);
+    }
+}

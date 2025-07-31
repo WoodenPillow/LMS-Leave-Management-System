@@ -1,0 +1,19 @@
+function add_employee()
+    IF employee_count == MAX_EMPLOYEES THEN
+        DISPLAY "Error: Maximum number of employees reached"
+        RETURN
+    END IF
+
+    DISPLAY "Enter employee name: "
+    READ employees[employee_count].name
+    DISPLAY "Enter employee ID: "
+    READ employees[employee_count].id
+    DISPLAY "Enter the employee's department (1 to ", MAX_DEPARTMENTS, "): "
+    READ employees[employee_count].department
+    DISPLAY "Enter the number of leaves for ", employees[employee_count].name, ": "
+    READ employees[employee_count].leaves_remaining
+
+    employee_count = employee_count + 1
+    DISPLAY "Employee added successfully"
+END function
+

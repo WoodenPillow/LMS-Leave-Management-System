@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <string.h>
+
+#define MAX_EMPLOYEES 50
+#define MAX_LEAVES 10
+#define MAX_DEPARTMENTS 4
+#define MAX_LENGTH 100
+
+
+struct Employee {
+    char name[MAX_LENGTH];
+    int id;
+    int department;
+    int leaves_remaining;
+};
+
+typedef enum {
+    PENDING,
+    APPROVED,
+    REJECTED
+} LeaveStatus;
+
+struct Leave {
+    int id;
+    int employee_id;
+    char start_date[MAX_LENGTH];
+    char end_date[MAX_LENGTH];
+    char reason[MAX_LENGTH];
+    LeaveStatus status;
+};
+
+struct Employee employees[MAX_EMPLOYEES];
+int employee_count = 0;
+
+struct Leave leaves[MAX_LEAVES];
+int leave_count = 0;
+
+int department_leaves[MAX_DEPARTMENTS];

@@ -1,0 +1,21 @@
+FUNCTION read_employees():
+    IF employee_count == MAX_EMPLOYEES THEN
+        PRINT "Error: Maximum number of employees reached"
+        RETURN
+    END IF
+    
+    FILE* fp = OPEN_FILE("employees.txt", "r")
+    IF fp == NULL THEN
+        PRINT "No employees found"
+        RETURN
+    END IF
+    
+    char buffer[1024]
+    GETS_FROM_FILE(buffer, 1024, fp)
+    WHILE READ_FROM_FILE(fp, "%d%s%d%d", &employees[employee_count].id, employees[employee_count].name, &employees[employee_count].department, &employees[employee_count].leaves_remaining) == 4 DO
+        employee_count++
+    END WHILE
+    
+    PRINT "Employees read from file successfully"
+    CLOSE_FILE(fp)
+END FUNCTION

@@ -1,0 +1,23 @@
+void view_leaves() {
+    if (leave_count == 0) {
+        printf(nNo leaves foundn);
+        return;
+    }
+    printf(IDtEmployee IDtStart DatetEnd DatetReasonttStatusn);
+    for (int i = 0; i  leave_count; i++) {
+        const char status;
+        switch (leaves[i].status) {
+        case PENDING
+            status = PENDING;
+            break;
+        case APPROVED
+            status = APPROVED;
+            break;
+        case REJECTED
+            status = REJECTED;
+            break;
+        }
+
+        printf(%dt%dtt%st%st%st%sn, leaves[i].id, leaves[i].employee_id, leaves[i].start_date, leaves[i].end_date, leaves[i].reason, status);
+    }
+}

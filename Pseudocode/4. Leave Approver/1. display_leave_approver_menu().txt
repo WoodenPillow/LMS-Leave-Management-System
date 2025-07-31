@@ -1,0 +1,11 @@
+Function display_leave_approver_menu():
+    PRINT "Leave Approver Menu"
+    PRINT "1. View Pending Leaves"
+    PRINT "2. Approve Leave"
+    PRINT "3. View Staff On Leave on a Specific Date"
+    PRINT "4. Write leaves summary to text file"
+    PRINT "5. Exit"
+    PRINT "Enter your choice: "
+
+END FUNCTION
+

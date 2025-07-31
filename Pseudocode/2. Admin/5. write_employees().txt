@@ -1,0 +1,17 @@
+FUNCTION write_employees():
+    IF employee_count == 0 THEN
+        PRINT "No employees found"
+        RETURN
+    END IF
+    
+    FILE* fp = OPEN_FILE("employees.txt", "w")
+    PRINT_TO_FILE(fp, "ID\tName\tDepartment\tLeaves Remaining")
+    FOR i = 0 TO employee_count - 1 DO
+        PRINT_TO_FILE(fp, employees[i].id, "\t", employees[i].name, "\t", employees[i].department, "\t\t", employees[i].leaves_remaining)
+    END FOR
+    
+    PRINT "Employees written to file successfully"
+    CLOSE_FILE(fp)
+END FUNCTION
+
+

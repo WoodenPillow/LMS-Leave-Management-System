@@ -1,0 +1,2 @@
+DEFINE - Structures, Enumerations, related variables
+DECLARE - variables

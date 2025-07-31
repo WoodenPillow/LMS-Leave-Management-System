@@ -1,0 +1,148 @@
+#include "Functions.h"
+
+int main() {
+    int choice;
+    int option;
+    int flag;
+    char username[30], password[30];
+
+    while (1) {
+        printf("============================================================\n");
+        printf("Welcome to Leave Management System BY TP068579 Yap Ming Shen\n");
+        printf("\nEnter your role:\n");
+        printf("1. Admin\n");
+        printf("2. Staff\n");
+        printf("3. Leave Approver\n");
+        printf("4. Exit\n");
+        printf("============================================================\n");
+        printf("Enter your choice: ");
+        scanf("%d", &option);
+        flag = 1;
+        switch (option) {
+            case 1:
+                printf("\nEnter username: ");
+                scanf("%s", username);
+                printf("Enter password: ");
+                scanf("%s", password);
+                if (strcmp(username, "admin") || strcmp(password, "admin")) {
+                    printf("\nInvalid username or password!\n\n");
+                    break;
+                }
+                else {
+                    printf("\nLogin Successful!\n\n");
+                }
+                while (flag) {
+                    display_admin_menu();
+                    scanf("%d", &choice);
+                    
+                    switch (choice) {
+                        case 1:
+                            add_employee();
+                            break;
+                        case 2:
+                            view_employees();
+                            break;
+                        case 3:
+                            view_leave_summary();
+                            break;
+                        case 4:
+                            write_employees();
+                            break;
+                        case 5:
+                            read_employees();
+                            break;
+                        case 6:
+                            flag = 0;
+                            break;
+                        default:
+                            printf("Error: Invalid choice!\n");
+                            break;
+                    }
+                }
+                break;
+            case 2:
+                printf("\nEnter username: ");
+                scanf("%s", username);
+                printf("Enter password: ");
+                scanf("%s", password);
+                if (strcmp(username, "staff") || strcmp(password, "staff")) {
+                    printf("\nInvalid username or password!\n\n");
+                    break;
+                }
+                else {
+                    printf("\nLogin Successful!\n\n");
+                }
+                while (flag) {
+                    display_staff_menu();
+                    scanf("%d", &choice);
+                    
+                    switch (choice) {
+                        case 1:
+                            view_pending_leaves();
+                            break;
+                        case 2:
+                            view_leaves();
+                            break;
+                        case 3:
+                            apply_for_leave();
+                            break;
+                        case 4:
+                            cancel_leave_request();
+                            break;
+                        case 5:
+                            flag = 0;
+                            break;
+                        default:
+                            printf("Error: Invalid choice!\n");
+                            break;
+                    }
+                }
+                break;
+            case 3:
+                printf("\nEnter username: ");
+                scanf("%s", username);
+                printf("Enter password: ");
+                scanf("%s", password);
+                if (strcmp(username, "leaveapp") || strcmp(password, "leaveapp")) {
+                    printf("\nInvalid username or password!\n\n");
+                    break;
+                }
+                else {
+                    printf("\nLogin Successful!\n\n");
+                }
+                while (flag) {
+                    display_leave_approver_menu();
+                    scanf("%d", &choice);
+                    
+                    switch (choice) {
+                        case 1:
+                            view_leaves();
+                            break;
+                        case 2:
+                            approve_leave();
+                            break;
+                        case 3:
+                            view_staff_on_leave();
+                            break;
+                        case 4:
+                            write_leaves_summary();
+                            break;
+                        case 5:
+                            flag = 0;
+                            break;
+                        default:
+                            printf("Error: Invalid choice!\n");
+                            break;
+                    }
+                }
+                break;
+            case 4:
+                return 0;
+            default:
+                printf("Error: Invalid role!\n");
+                break;
+        }
+    }
+
+    return 0;
+}

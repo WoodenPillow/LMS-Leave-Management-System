@@ -1,0 +1,27 @@
+Function approve_leave():
+    Input leave_id
+    found = False
+    leave_index = 0
+    
+    For i = 0 To leave_count - 1
+        If leaves(i).id = leave_id Then
+            found = True
+            leave_index = i
+            Exit For
+        End If
+    Next i
+
+    If Not found Then
+        Print "Error: Leave request not found"
+        Return
+    End If
+
+    If leaves(leave_index).status <> PENDING Then
+        Print "Error: Leave request already processed"
+        Return
+    End If
+
+    leaves(leave_index).status = APPROVED
+    department_leaves(employees(leave_index).department) += 1
+    Print "Leave request approved successfully"
+End Function

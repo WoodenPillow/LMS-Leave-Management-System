@@ -1,0 +1,13 @@
+function view_pending_leaves():
+    if leave_count equals 0:
+        print "No leaves found"
+        return
+    end if
+    print "ID\tEmployee ID\tStart Date\tEnd Date\tReason"
+    for i from 0 to leave_count-1:
+        if leaves[i].status equals PENDING:
+            print leaves[i].id, "\t", leaves[i].employee_id, "\t\t", leaves[i].start_date, "\t", leaves[i].end_date, "\t", leaves[i].reason
+        end if
+    end for
+end function
+

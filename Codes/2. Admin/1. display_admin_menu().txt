@@ -1,0 +1,10 @@
+void display_admin_menu() {
+    printf("Admin Menu\n");
+    printf("1. Add Staff\n");
+    printf("2. View Staff\n");
+    printf("3. View Leave Summary\n");
+    printf("4. Write staff to a text file\n");
+    printf("5. Read staff from a text file\n");
+    printf("6. Exit\n");
+    printf("Enter your choice: ");
+}
